@@ -1,32 +1,40 @@
 let m;
+let movers = [];
 
 function setup() {
   createCanvas(400, 400);
   m = new Mover(50, 50, 10);
   m2 = new Mover (300, 300, 50);
+
+  for (let=0; i<5; i++){
+    let mover = new Mover(random(400), randow(400), random(5,50));
+    movers.push(mover);
+  }
 }
 
 function draw() {
   background(220);
-  m.update();
-  m.show();
 
-  m2.update();
-  m2.show();
+  // for (let i=0; i<movers.length; i++){
+  //   let mover = movers[i];
+  //   m.update();
+  //   m.show();
+  }
+
+  for (let mover of movers) {
+    mover.update();
+    mover.show();
+  }
+
 
   if (mouseIsPressed) {
     //make attract to mouse position
     let mousePos = createVector(mouseX, mouseY);
 
-    m.attractTo(mousePos);
-    m2.attractTo(mousePos);
-
-    // let f = p5.Vector.sub(mousePos, m.pos);
-    // f.limit(2);
-    // m.applyForce(f);
-    //
-    // let f2 = p5.Vector.sub(mousePos, m2.pos);
-    // f2.limit(2);
-    // m2.applyForce(f2);
+    for (let mover of movers){
+      movers.attractTo(mousePos);
+    }
+    // m.attractTo(mousePos);
+    // m2.attractTo(mousePos);
   }
 }
