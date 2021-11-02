@@ -3,6 +3,7 @@ let movers = [];
 
 function setup() {
   createCanvas(400, 400);
+  // canvas =
   m = new Mover(50, 50, 10);
   m2 = new Mover (300, 300, 50);
 
@@ -24,6 +25,7 @@ function draw() {
   for (let mover of movers) {
     mover.update();
     mover.show();
+    // mover.drawOn(canvas);
   }
 
 

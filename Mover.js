@@ -13,7 +13,7 @@ class Mover {
   }
 
   attractTo(aPos){
-    let f = p5.Vector.sub(aPos, this.pos);
+    let f = p5.Vector.add(aPos, this.pos);
     f.limit(2);
     this.applyForce(f);
   }
@@ -27,4 +27,10 @@ class Mover {
     fill(0);
     circle(this.pos.x, this.pos.y, this.m);
   }
+
+  // drawOn(c) {
+  //   c.fill(250,250,0,30);
+  //   c.noStroke();
+  //   c.circle(this.pos.x, this.pos.y, this.m*100);
+  // }
 }
