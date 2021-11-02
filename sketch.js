@@ -22,6 +22,7 @@ function draw() {
     mover.update();
     mover.show();
     mover.drawOn(canvas);
+    mover.checkEdge();
   }
 
 
@@ -33,4 +34,5 @@ function draw() {
       mover.attractTo(mousePos);
     }
   }
+ 
 }
